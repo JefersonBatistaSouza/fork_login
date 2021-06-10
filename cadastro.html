@@ -20,11 +20,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="cpf" class="form-label">CPF</label>
-                        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}">
+                        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" maxlength="14" minlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" autocomplete="off" inputmode="number" onkeypress="formatar('###.###.###-##', this);" />
                     </div>
                     <div class="mb-3">
                         <label for="telefone" class="form-label">Celular</label>
-                        <input type="text" class="form-control" id="txtTelefone" placeholder="(00)0.0000-0000" maxlength="15"   >
+                        <input type="text" class="form-control" id="txtTelefone" placeholder="(00)0.0000-0000" maxlength="15">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">E-mail</label>
@@ -41,8 +41,10 @@
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Tenho pelo menos 18 anos de idade, li compreendo e aceito os termos e condições.</label>
+                        <label class="form-check-label" for="exampleCheck1">Tenho pelo menos 18 anos de idade, li compreendo e aceito os <a href="https://gruporondoesportes.com/bet/rules" target="_blank"> termos e condições</a>.</label>
                     </div>
+
+
                     <button type="submit" class="btn btn-success">Submit</button>
 
 
@@ -62,5 +64,17 @@
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.js"></script>
+<script src="js/validador.js"></script>
+<script>
+    function formatar(mascara, documento){
+     var i = documento.value.length;
+     var saida = mascara.substring(0,1);
+     var texto = mascara.substring(i)
+    
+     if (texto.substring(0,1) != saida){
+      documento.value += texto.substring(0,1);
+     }  
+    }
+   </script>
 </body>
 </html>
