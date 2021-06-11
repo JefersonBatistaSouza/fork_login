@@ -1,4 +1,4 @@
-<script>
+//<script>
 $(document).ready(function() {
    
     $('#cpf_form').bootstrapValidator({
@@ -55,4 +55,4 @@ $(document).ready(function() {
         }
     });
 });
-</script>
+//</script>
